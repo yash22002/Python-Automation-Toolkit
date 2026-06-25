@@ -8,7 +8,7 @@ import requests
 from urllib.parse import urljoin
 
 # Setup
-url = 'https://flatdeal.codewraps.com'
+url = 'site_url'
 output_folder = r'C:\Users\prath\Desktop\MyImages'
 #create folder if it doesn't exist
 if not os.path.exists(output_folder):
@@ -16,12 +16,12 @@ if not os.path.exists(output_folder):
 
 # Browser setup
 options = webdriver.ChromeOptions()
-# options.add_argument('--headless') # Debugging ke liye ise comment out karein taaki browser dikhe
+# options.add_argument('--headless')
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 driver.get(url)
 
-# Page ko scroll karna
+# Page scroll
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 time.sleep(30) # 30 second wait for loading the images 
 
